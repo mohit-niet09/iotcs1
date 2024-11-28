@@ -1,0 +1,40 @@
+{% extends "master.html" %}{% block start%}
+<div class="container col-md-6 py-4 card">
+  <h1 class="text-center">Update Student Form</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label>Student Name</label>
+      <input
+        type="text"
+        name="stdName"
+        value="{{data.name}}"
+        class="form-control"
+        placeholder="Enter student name"
+      />
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input
+        type="number"
+        name="stdAge"
+        value="{{data.age}}"
+        class="form-control"
+        placeholder="Enter age"
+      />
+    </div>
+    <div class="form-group">
+      <label>Email address</label>
+      <input
+        type="email"
+        name="stdEmail"
+        value="{{data.email}}"
+        class="form-control"
+        placeholder="Enter email"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Update Student</button>
+  </form>
+</div>
+{% endblock %}
